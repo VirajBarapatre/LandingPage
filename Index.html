@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawn Tennis – Learn the Sport from Zero</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --primary:#176b3b;
+            --accent:#d97b36;
+            --bg-page:#f7f3ea;
+            --bg-light:#ffffff;
+            --border-soft:#d8d2c4;
+            --text-main:#28323a;
+            --text-muted:#6b7280;
+        }
+
+        * { scroll-behavior:smooth; }
+
+        body {
+            font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+            background-color:var(--bg-page);
+            color:var(--text-main);
+            line-height:1.7;
+        }
+
+        h1,h2,h3,h4,h5 {
+            font-family:'Merriweather',Georgia,'Times New Roman',serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color:rgba(255,255,255,.95);
+            backdrop-filter:blur(10px);
+            border-bottom:1px solid rgba(216,210,196,.9);
+        }
+        .navbar-brand {
+            font-weight:600;
+            letter-spacing:.06em;
+            text-transform:uppercase;
+            font-size:.9rem;
+        }
+        .navbar-nav .nav-link {
+            font-size:.92rem;
+            font-weight:500;
+            color:#4b5563!important;
+            padding:0 .8rem;
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color:var(--primary)!important;
+        }
+
+        /* Hero */
+        .hero {
+            padding-top:96px;
+            padding-bottom:72px;
+        }
+        .hero-inner {
+            background:radial-gradient(circle at top left,#fdfaf2,#f4ebdc);
+            border-radius:24px;
+            border:1px solid var(--border-soft);
+            padding:40px 36px;
+            box-shadow:0 24px 45px rgba(148,121,76,.12),0 1px 0 rgba(255,255,255,.7);
+        }
+        .hero-tag {
+            display:inline-flex;
+            align-items:center;
+            gap:.4rem;
+            padding:.35rem .9rem;
+            border-radius:999px;
+            background:#fefaf3;
+            border:1px solid #e2d7c2;
+            font-size:.78rem;
+            text-transform:uppercase;
+            letter-spacing:.12em;
+            color:#6b4a1e;
+        }
+        .hero-title {
+            font-size:clamp(2.1rem,3.2vw,2.7rem);
+            margin:1rem 0 .5rem;
+        }
+        .hero-subtitle {
+            font-size:.98rem;
+            color:var(--text-muted);
+            max-width:34rem;
+        }
+        .hero-cta {
+            margin-top:1.8rem;
+            display:flex;
+            flex-wrap:wrap;
+            gap:.8rem;
+        }
+        .btn-primary-custom,
+        .btn-outline-custom {
+            border-radius:999px;
+            padding:.75rem 1.7rem;
+            font-weight:500;
+            font-size:.92rem;
+        }
+        .btn-primary-custom {
+            border:1px solid #145532;
+            background:var(--primary);
+            color:#fdfaf3;
+        }
+        .btn-primary-custom:hover {
+            background:#145532;
+            color:#fff;
+        }
+        .btn-outline-custom {
+            border:1px solid #c9c1b2;
+            background:transparent;
+            color:#374151;
+        }
+        .btn-outline-custom:hover {
+            background:#f5eee2;
+        }
+        .hero-stats {
+            margin-top:1.9rem;
+            display:flex;
+            flex-wrap:wrap;
+            gap:1.6rem;
+            font-size:.85rem;
+        }
+        .hero-stat strong {
+            display:block;
+            font-size:1.1rem;
+            color:#1f2933;
+        }
+        .hero-stat span { color:var(--text-muted); }
+        .hero-image-main {
+            border-radius:20px;
+            width:100%;
+            height:270px;
+            object-fit:cover;
+            border:1px solid #d8d2c4;
+        }
+        .hero-image-note {
+            position:absolute;
+            right:14px;
+            bottom:14px;
+            background:rgba(255,255,255,.96);
+            border-radius:12px;
+            padding:.5rem .8rem;
+            font-size:.68rem;
+            color:#4b5563;
+            border:1px solid rgba(216,210,196,.95);
+            max-width:78%;
+        }
+
+        /* Sections */
+        .section {
+            padding:88px 0;
+        }
+        .section-header {
+            max-width:760px;
+            margin:0 auto 46px;
+            text-align:center;
+        }
+        .section-header h2 {
+            font-size:1.8rem;
+            margin-bottom:.4rem;
+        }
+        .section-header p {
+            font-size:.96rem;
+            color:var(--text-muted);
+        }
+        .section-light { background:var(--bg-page); }
+        .section-white {
+            background:var(--bg-light);
+            border-top:1px solid #e4ddcf;
+            border-bottom:1px solid #e4ddcf;
+        }
+
+        /* Cards */
+        .card-soft {
+            background:#fff;
+            border-radius:18px;
+            border:1px solid var(--border-soft);
+            padding:1.6rem 1.7rem;
+            height:100%;
+            box-shadow:0 10px 18px rgba(0,0,0,.03),0 1px 0 rgba(255,255,255,.8);
+        }
+        .card-soft img {
+            border-radius:14px;
+            width:100%;
+            height:220px;
+            object-fit:cover;
+            margin-bottom:1rem;
+        }
+        .card-soft h5 {
+            font-size:1.04rem;
+            margin-bottom:.45rem;
+        }
+        .card-soft small { font-size:.75rem; }
+
+        .tag-surface {
+            display:inline-flex;
+            align-items:center;
+            padding:.2rem .6rem;
+            border-radius:999px;
+            font-size:.7rem;
+            font-weight:500;
+            margin-bottom:.6rem;
+        }
+        .surface-grass { background:#e4f0e7;color:#176b3b; }
+        .surface-clay { background:#fbe1cc;color:#b0541c; }
+        .surface-hard { background:#dde8f5;color:#1b4b7b; }
+
+        .pill-icon {
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            width:36px;height:36px;
+            border-radius:999px;
+            background:#e2efe6;
+            color:#176b3b;
+            margin-bottom:.6rem;
+            font-size:.95rem;
+        }
+
+        /* Lists */
+        ul.clean-list {
+            list-style:none;
+            padding-left:0;
+            margin-bottom:0;
+        }
+        ul.clean-list li {
+            font-size:.9rem;
+            color:var(--text-muted);
+            margin-bottom:.4rem;
+            display:flex;
+            align-items:flex-start;
+        }
+        ul.clean-list li i {
+            color:#8b5a2b;
+            margin-right:.5rem;
+            font-size:.46rem;
+            margin-top:.48rem;
+        }
+
+        .badge-small {
+            font-size:.72rem;
+            padding:.24rem .7rem;
+            border-radius:999px;
+            background:#f3ecde;
+            color:#6b7280;
+        }
+
+        /* Images */
+        .players-img,.physics-img {
+            border-radius:18px;
+            width:100%;
+            object-fit:cover;
+            border:1px solid var(--border-soft);
+        }
+
+        /* Tables */
+        .list-table {
+            width:100%;
+            font-size:.9rem;
+        }
+        .list-table td {
+            padding:.42rem 0;
+            border-bottom:1px solid #ede5d6;
+        }
+        .list-table tr:last-child td { border-bottom:none; }
+        .list-table td:first-child { font-weight:500; }
+        .list-table td:nth-child(3) {
+            text-align:right;
+            color:#b45309;
+        }
+
+        /* FAQ */
+        .faq-item h6 {
+            font-size:.98rem;
+            margin-bottom:.2rem;
+        }
+        .faq-item p {
+            font-size:.9rem;
+            color:var(--text-muted);
+            margin-bottom:.65rem;
+        }
+        .faq-item:last-child p { margin-bottom:0; }
+
+        /* Footer */
+        footer {
+            background:#f2ebdd;
+            border-top:1px solid #e2d9c6;
+            padding:22px 0;
+            font-size:.85rem;
+            color:#4b5563;
+        }
+        footer a {
+            color:#374151;
+            text-decoration:none;
+        }
+        footer a:hover { text-decoration:underline; }
+
+        /* Back to top */
+        .back-to-top {
+            position:fixed;
+            bottom:22px;
+            right:22px;
+            width:44px;
+            height:44px;
+            border-radius:50%;
+            border:1px solid #c9c1b2;
+            background:#fff;
+            color:#374151;
+            display:none;
+            align-items:center;
+            justify-content:center;
+            z-index:50;
+            box-shadow:0 10px 24px rgba(0,0,0,.08);
+        }
+        .back-to-top:hover { background:#f5eee2; }
+
+        /* Responsive */
+        @media (min-width:992px){
+            .hero-inner{padding:46px 46px;}
+            .hero-image-main{height:300px;}
+        }
+        @media (max-width:991.98px){
+            .hero-inner{text-align:left;}
+            .hero-image-wrapper{margin-top:1.8rem;}
+        }
+        @media (max-width:575.98px){
+            .hero-inner{padding:28px 22px;}
+            .hero-title{font-size:1.9rem;}
+            .section{padding:70px 0;}
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#top">
+            <i class="fa-solid fa-tennis-ball me-2" style="color:#b45309;"></i>
+            LAWN TENNIS
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" href="#about">Basics</a></li>
+                <li class="nav-item"><a class="nav-link" href="#flow">Match Flow</a></li>
+                <li class="nav-item"><a class="nav-link" href="#court">Court &amp; Gear</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#players">Players</a></li>
+                <li class="nav-item"><a class="nav-link" href="#physics">Physics</a></li>
+                <li class="nav-item"><a class="nav-link" href="#glossary">Glossary</a></li>
+                <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#start">Start Playing</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="top"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-tag">
+                        <i class="fa-regular fa-circle-play"></i>
+                        For complete beginners
+                    </div>
+                    <h1 class="hero-title">Understand tennis in one page.</h1>
+                    <p class="hero-subtitle">
+                        Never watched or played tennis before? This page walks you through the sport step by step:
+                        what the court looks like, how points are scored, what players actually do, and how you can start.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#about" class="btn btn-primary-custom">1. Learn the basics</a>
+                        <button class="btn btn-outline-custom" onclick="scrollToSection('#flow')">
+                            2. See how a match works
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <strong>Start here</strong>
+                            <span>Basics &amp; simple examples</span>
+                        </div>
+                        <div class="hero-stat">
+                            <strong>Then</strong>
+                            <span>Match flow, skills &amp; rules</span>
+                        </div>
+                        <div class="hero-stat">
+                            <strong>Finally</strong>
+                            <span>Glossary &amp; FAQ for doubts</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative hero-image-wrapper">
+                        <img
+                            src="https://commons.wikimedia.org/wiki/Special:FilePath/Tennis_courts_in_Oslo_aerial.jpg"
+                            alt="Aerial view of tennis courts in Oslo, Norway (Wikimedia Commons)"
+                            class="hero-image-main"
+                        >
+                        <div class="hero-image-note">
+                            This is where tennis happens: a net in the middle, lines to mark the court,
+                            and two (or four) players – photo from
+                            <a href="https://commons.wikimedia.org/wiki/File:Tennis_courts_in_Oslo_aerial.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 1. BASIC IDEA -->
+<section id="about" class="section section-light">
+    <div class="container">
+        <div class="section-header">
+            <h2>1. What Is Tennis, in Simple Words?</h2>
+            <p>
+                Tennis is a game where two sides hit a ball back and forth over a net. If you hit the ball so that it
+                lands inside the court and the other side cannot return it properly, you win the point.
+            </p>
+        </div>
+
+        <div class="row g-5 align-items-start">
+            <div class="col-lg-7">
+                <h5 class="mb-2">1.1 Who plays and where?</h5>
+                <p>
+                    You play tennis on a rectangular court with a net in the middle. The court can be outside or indoors.
+                    There are two main types of matches:
+                </p>
+                <ul class="clean-list">
+                    <li><i class="fa-solid fa-circle"></i><strong>Singles:</strong>&nbsp;1 vs 1 (most common in TV matches).</li>
+                    <li><i class="fa-solid fa-circle"></i><strong>Doubles:</strong>&nbsp;2 vs 2 (two players on each side).</li>
+                </ul>
+
+                <h5 class="mb-2 mt-4">1.2 What happens in one point?</h5>
+                <p>Every rally (point) roughly follows this order:</p>
+                <ol style="font-size:0.9rem;color:var(--text-muted);padding-left:1.1rem;">
+                    <li>The right player serves (starts the point by hitting the ball into the opposite service box).</li>
+                    <li>The other player tries to return the serve back over the net.</li>
+                    <li>Both players hit the ball back and forth (this is called a <strong>rally</strong>).</li>
+                    <li>The point ends when the ball:
+                        <ul style="margin-top:.25rem;padding-left:1rem;">
+                            <li>Hits the net and does not go over, or</li>
+                            <li>Lands outside the court lines, or</li>
+                            <li>Bounces twice before a player hits it.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h5 class="mb-2 mt-4">1.3 How does the scoring work? (With example)</h5>
+                <p>
+                    Tennis does not use 1, 2, 3, 4 for points inside a game. It uses:
+                    <strong>0 (Love) → 15 → 30 → 40 → Game</strong>.
+                </p>
+                <p style="font-size:0.9rem;">Example of one game between Player A and Player B:</p>
+                <ul class="clean-list">
+                    <li><i class="fa-solid fa-circle"></i>Both start at <strong>0–0</strong> (Love–Love).</li>
+                    <li><i class="fa-solid fa-circle"></i>Player A wins the first point → score becomes <strong>15–0</strong>.</li>
+                    <li><i class="fa-solid fa-circle"></i>Player B wins the next point → score becomes <strong>15–15</strong>.</li>
+                    <li><i class="fa-solid fa-circle"></i>Player A wins again → <strong>30–15</strong>.</li>
+                    <li><i class="fa-solid fa-circle"></i>Player A wins again → <strong>40–15</strong>.</li>
+                    <li><i class="fa-solid fa-circle"></i>Player A wins one more point → <strong>Game to A</strong>.</li>
+                </ul>
+                <p style="font-size:0.9rem;color:var(--text-muted);" class="mt-2">
+                    If the score reaches <strong>40–40</strong>, it is called <strong>deuce</strong>.
+                    Then a player must win two points in a row: first “advantage”, then “game”.
+                </p>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="card-soft">
+                    <span class="badge-small mb-2">1.4 Basic match structure</span>
+                    <h5 class="mb-2">From point to match</h5>
+                    <ul class="clean-list mt-2">
+                        <li><i class="fa-solid fa-circle"></i><strong>Point</strong> – one rally, winner gets 15/30/40/Game.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Game</strong> – first to reach “Game” with at least two points more than the opponent.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Set</strong> – usually first to 6 games, must lead by 2 games (e.g., 6–4). Often a tie-break is played at 6–6.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Match</strong> – usually best of 3 sets, or best of 5 sets in some men’s tournaments.</li>
+                    </ul>
+                    <hr class="my-3" style="border-color:#eadfcd;">
+                    <h6 class="mb-1">Very short summary</h6>
+                    <p style="font-size:0.9rem;color:var(--text-muted);" class="mb-0">
+                        You win <strong>points</strong> to win a <strong>game</strong>, win games to win a
+                        <strong>set</strong>, and win sets to win the <strong>match</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. MATCH FLOW -->
+<section id="flow" class="section section-white">
+    <div class="container">
+        <div class="section-header">
+            <h2>2. How Does a Match Actually Happen?</h2>
+            <p>
+                If you sit down to watch a tennis match having never seen one before, this is roughly what you will see,
+                step by step.
+            </p>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-6">
+                <div class="card-soft">
+                    <span class="badge-small mb-2">2.1 Before the match</span>
+                    <h5>Warm-up &amp; coin toss</h5>
+                    <ul class="clean-list mt-3">
+                        <li><i class="fa-solid fa-circle"></i>Players enter the court with their bags and rackets.</li>
+                        <li><i class="fa-solid fa-circle"></i>They meet at the net with the umpire (referee).</li>
+                        <li><i class="fa-solid fa-circle"></i>A coin toss decides who will serve first and which side each player starts on.</li>
+                        <li><i class="fa-solid fa-circle"></i>Players hit a few balls to warm up (usually 5–10 minutes).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-soft">
+                    <span class="badge-small mb-2">2.2 During the match</span>
+                    <h5>Games and sets in action</h5>
+                    <ul class="clean-list mt-3">
+                        <li><i class="fa-solid fa-circle"></i>The server stands behind the baseline, to the right side first.</li>
+                        <li><i class="fa-solid fa-circle"></i>They serve diagonally into the opponent’s service box.</li>
+                        <li><i class="fa-solid fa-circle"></i>After each point, the server serves again (two tries each time).</li>
+                        <li><i class="fa-solid fa-circle"></i>After each game, serving changes to the other player.</li>
+                        <li><i class="fa-solid fa-circle"></i>Players change ends of the court after every odd number of games (e.g., after game 1, 3, 5…).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5 mt-1">
+            <div class="col-md-6">
+                <div class="card-soft">
+                    <span class="badge-small mb-2">2.3 How a simple set might look</span>
+                    <h5>Example: Player A vs Player B</h5>
+                    <p style="font-size:0.9rem;">
+                        Imagine Player A and Player B are playing a set. The game score could go like this:
+                    </p>
+                    <ul class="clean-list mt-2">
+                        <li><i class="fa-solid fa-circle"></i>Game 1: A wins → set score 1–0</li>
+                        <li><i class="fa-solid fa-circle"></i>Game 2: B wins → set score 1–1</li>
+                        <li><i class="fa-solid fa-circle"></i>Game 3: A wins → set score 2–1</li>
+                        <li><i class="fa-solid fa-circle"></i>… they continue until one reaches 6 games.</li>
+                        <li><i class="fa-solid fa-circle"></i>If the score is 6–4, the set is over (A wins 6–4).</li>
+                        <li><i class="fa-solid fa-circle"></i>If the score becomes 6–6, they usually play a tie-break to decide that set.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-soft">
+                    <span class="badge-small mb-2">2.4 What is a tie-break?</span>
+                    <h5>Quick version</h5>
+                    <p style="font-size:0.9rem;">
+                        A tie-break is like a mini game used when the set is 6–6. Instead of normal 15/30/40 scoring, players count:
+                        <strong>1, 2, 3…</strong>. The first to reach 7 points, with at least 2 points more than the opponent
+                        (for example 7–5, 8–6), wins the tie-break and the set 7–6.
+                    </p>
+                    <p style="font-size:0.9rem;" class="mb-0">
+                        You don’t need to know every detail to enjoy tennis. Just remember:
+                        a tie-break is a short, intense race for points to decide a close set.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. COURT & GEAR -->
+<section id="court" class="section section-light">
+    <div class="container">
+        <div class="section-header">
+            <h2>3. Court, Lines &amp; Equipment</h2>
+            <p>
+                If you have never seen a tennis court, the lines can look confusing. Here is what they mean and what you need to play.
+            </p>
+        </div>
+
+        <div class="row g-5 align-items-start mb-4">
+            <div class="col-lg-6">
+                <h5 class="mb-2">3.1 Basic court layout (in words)</h5>
+                <ul class="clean-list">
+                    <li><i class="fa-solid fa-circle"></i>The court is a rectangle divided by a net in the middle.</li>
+                    <li><i class="fa-solid fa-circle"></i>Long lines at the far ends are called <strong>baselines</strong>.</li>
+                    <li><i class="fa-solid fa-circle"></i>Long lines on the sides are called <strong>sidelines</strong> (different for singles and doubles).</li>
+                    <li><i class="fa-solid fa-circle"></i>Shorter lines near the net and middle make two boxes on each side – these are the <strong>service boxes</strong>.</li>
+                    <li><i class="fa-solid fa-circle"></i>The ball must land in the correct service box on a serve.</li>
+                </ul>
+
+                <h5 class="mb-2 mt-4">3.2 Court sizes (you don’t need to memorize)</h5>
+                <p class="mb-1"><strong>Length:</strong> 78 ft (23.77 m)</p>
+                <p class="mb-1"><strong>Singles width:</strong> 27 ft (8.23 m)</p>
+                <p class="mb-1"><strong>Doubles width:</strong> 36 ft (10.97 m)</p>
+                <p class="mb-3"><strong>Net height:</strong> 3 ft (0.914 m) in the middle</p>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card-soft">
+                    <span class="badge-small mb-2">3.3 What you need to play</span>
+                    <h5 class="mb-2">Equipment checklist</h5>
+                    <ul class="clean-list mt-2">
+                        <li><i class="fa-solid fa-circle"></i><strong>Racket:</strong> Choose a beginner racket, not too heavy.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Ball:</strong> Normal yellow tennis balls. Children often start with softer, slower balls.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Shoes:</strong> Sports shoes with non-marking soles. Some courts require this.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Clothes:</strong> Comfortable T-shirt, shorts or track pants, and maybe a cap.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Optional:</strong> Wristbands, overgrip (extra grip tape on handle), and a simple sports bag.</li>
+                    </ul>
+                    <p style="font-size:0.9rem;color:var(--text-muted);" class="mt-3 mb-0">
+                        You do not need expensive gear to start. A basic racket, a few balls, and any clean sports shoes are enough at the beginning.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card-soft">
+                    <span class="tag-surface surface-grass"><i class="fa-solid fa-circle me-1" style="font-size:0.45rem;"></i>Grass</span>
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Court_14_at_Wimbledon.jpg"
+                        alt="Empty grass tennis court at Wimbledon (Wikimedia Commons)"
+                    >
+                    <h5>Grass courts</h5>
+                    <p>
+                        The ball stays low and moves fast. Wimbledon is the most famous grass-court tournament in the world.
+                    </p>
+                    <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:Court_14_at_Wimbledon.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></small>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card-soft">
+                    <span class="tag-surface surface-clay"><i class="fa-solid fa-circle me-1" style="font-size:0.45rem;"></i>Clay</span>
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Tennis_Racquets_and_Balls_on_a_Clay_Court.jpg"
+                        alt="Tennis racquets and balls on a clay court (Wikimedia Commons)"
+                    >
+                    <h5>Clay courts</h5>
+                    <p>
+                        The ball bounces higher and slower. Players slide on the surface. The French Open is played on clay.
+                    </p>
+                    <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:Tennis_Racquets_and_Balls_on_a_Clay_Court.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></small>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card-soft">
+                    <span class="tag-surface surface-hard"><i class="fa-solid fa-circle me-1" style="font-size:0.45rem;"></i>Hard</span>
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Hardcourt_tennis_court_curtiss_park_saline_michigan.JPG"
+                        alt="Hardcourt tennis court in Michigan (Wikimedia Commons)"
+                    >
+                    <h5>Hard courts</h5>
+                    <p>
+                        Very common around the world. Bounce is medium and regular. Australian Open and US Open use hard courts.
+                    </p>
+                    <small>Photo: <a href="https://commons.wikimedia.org/wiki/File:Hardcourt_tennis_court_curtiss_park_saline_michigan.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. SKILLS -->
+<section id="skills" class="section section-white">
+    <div class="container">
+        <div class="section-header">
+            <h2>4. What Skills Do Tennis Players Use?</h2>
+            <p>
+                You do not need all of these skills to start, but this is what good players gradually develop over time.
+            </p>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-4">
+                <div class="card-soft">
+                    <span class="pill-icon"><i class="fa-solid fa-arrow-up-from-ground-water"></i></span>
+                    <h5>Serve – starting the point</h5>
+                    <p>
+                        The serve is the shot that begins every point. Players toss the ball in the air and hit it
+                        into the opposite service box.
+                    </p>
+                    <ul class="clean-list mt-2">
+                        <li><i class="fa-solid fa-circle"></i>Learn a simple, repeatable toss.</li>
+                        <li><i class="fa-solid fa-circle"></i>Bend your knees and use your whole body, not just your arm.</li>
+                        <li><i class="fa-solid fa-circle"></i>At beginner level, aim for <strong>consistency</strong>, not power.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card-soft">
+                    <span class="pill-icon"><i class="fa-solid fa-right-left"></i></span>
+                    <h5>Groundstrokes – rallying</h5>
+                    <p>
+                        These are your main shots during a rally: <strong>forehand</strong> and
+                        <strong>backhand</strong>. They are usually hit after one bounce.
+                    </p>
+                    <ul class="clean-list mt-2">
+                        <li><i class="fa-solid fa-circle"></i>Turn your shoulders and prepare the racket early.</li>
+                        <li><i class="fa-solid fa-circle"></i>Watch the ball closely until it meets the strings.</li>
+                        <li><i class="fa-solid fa-circle"></i>Try to send the ball higher over the net and deeper into the court for safety.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card-soft">
+                    <span class="pill-icon"><i class="fa-solid fa-bolt"></i></span>
+                    <h5>Net play &amp; touch</h5>
+                    <p>
+                        <strong>Volleys</strong> (hit before the bounce), <strong>overheads</strong>, and <strong>drop shots</strong>
+                        help finish points and surprise opponents.
+                    </p>
+                    <ul class="clean-list mt-2">
+                        <li><i class="fa-solid fa-circle"></i>Keep swings short at the net.</li>
+                        <li><i class="fa-solid fa-circle"></i>Hold the racket in front of you for quick reactions.</li>
+                        <li><i class="fa-solid fa-circle"></i>Use gentle hands for short, soft shots close to the net.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5 mt-1">
+            <div class="col-md-4">
+                <div class="card-soft">
+                    <span class="pill-icon"><i class="fa-solid fa-person-running"></i></span>
+                    <h5>Footwork &amp; fitness</h5>
+                    <p class="mb-0">
+                        Tennis is not just about the arm; it is a full-body sport. Split steps, quick first moves, and
+                        good recovery steps help you reach the ball on time and in balance.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-soft">
+                    <span class="pill-icon"><i class="fa-solid fa-brain"></i></span>
+                    <h5>Mental side</h5>
+                    <p class="mb-0">
+                        Staying calm after mistakes, focusing on one point at a time, and not giving up when you are
+                        behind are huge parts of the game. Even professionals struggle with this.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-soft">
+                    <span class="pill-icon"><i class="fa-solid fa-chess-board"></i></span>
+                    <h5>Simple strategy</h5>
+                    <p class="mb-0">
+                        Examples: play more shots to the opponent’s weaker side, bring them forward with a short ball,
+                        or push them back with a deeper shot. Strategy grows naturally as you play more.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. PLAYERS & GRAND SLAMS -->
+<section id="players" class="section section-white">
+    <div class="container">
+        <div class="section-header">
+            <h2>5. Famous Players &amp; Big Tournaments</h2>
+            <p>
+                The four biggest tennis events each year are called <strong>Grand Slams</strong>: Australian Open,
+                French Open, Wimbledon, and US Open.
+            </p>
+        </div>
+
+        <div class="row g-5 align-items-start mb-4">
+            <div class="col-lg-6">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Wimbledon_final_2019.png"
+                    alt="Roger Federer vs Novak Djokovic in the 2019 Wimbledon final (Wikimedia Commons)"
+                    class="players-img mb-2"
+                >
+                <small style="font-size:0.78rem;">
+                    2019 Wimbledon final – Roger Federer vs Novak Djokovic. Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Wimbledon_final_2019.png" target="_blank" rel="noopener">
+                        Wikimedia Commons
+                    </a>.
+                </small>
+            </div>
+            <div class="col-lg-6">
+                <div class="card-soft">
+                    <span class="badge-small mb-2">Some modern legends</span>
+                    <ul class="clean-list mt-2">
+                        <li><i class="fa-solid fa-circle"></i><strong>Roger Federer</strong> – known for elegant style and variety, 20 Grand Slam singles titles.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Rafael Nadal</strong> – “King of Clay”, record success at the French Open.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Novak Djokovic</strong> – record men’s Grand Slam singles titles and very strong mentally.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Serena Williams</strong> – 23 women’s Grand Slam singles titles, famous for power and comebacks.</li>
+                    </ul>
+                    <p style="font-size:0.9rem;color:var(--text-muted);" class="mt-3 mb-0">
+                        You do not need to remember all numbers. Just know that these players helped make tennis very popular
+                        around the world.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-6">
+                <div class="card-soft">
+                    <h6 class="mb-2">Grand Slam snapshot – Men (singles)</h6>
+                    <table class="list-table">
+                        <tbody>
+                        <tr><td>Novak Djokovic</td><td>Serbia</td><td>24</td></tr>
+                        <tr><td>Rafael Nadal</td><td>Spain</td><td>22</td></tr>
+                        <tr><td>Roger Federer</td><td>Switzerland</td><td>20</td></tr>
+                        <tr><td>Pete Sampras</td><td>USA</td><td>14</td></tr>
+                        </tbody>
+                    </table>
+                    <small class="text-muted" style="font-size:0.8rem;">
+                        Numbers are approximate and may change as active players add titles.
+                    </small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-soft">
+                    <h6 class="mb-2">Grand Slam snapshot – Women (singles)</h6>
+                    <table class="list-table">
+                        <tbody>
+                        <tr><td>Margaret Court</td><td>Australia</td><td>24</td></tr>
+                        <tr><td>Serena Williams</td><td>USA</td><td>23</td></tr>
+                        <tr><td>Steffi Graf</td><td>Germany</td><td>22</td></tr>
+                        <tr><td>Martina Navratilova</td><td>Czechia / USA</td><td>18</td></tr>
+                        </tbody>
+                    </table>
+                    <small class="text-muted" style="font-size:0.8rem;">
+                        These are some of the most successful women in Grand Slam history.
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. PHYSICS -->
+<section id="physics" class="section section-light">
+    <div class="container">
+        <div class="section-header">
+            <h2>6. The Simple Science Behind Tennis</h2>
+            <p>
+                You don’t need to be good at physics to enjoy tennis, but basic ideas explain why some shots dip down,
+                fly long, or bounce high.
+            </p>
+        </div>
+
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <h5 class="mb-2">6.1 Ball flight: up, forward, down</h5>
+                <p>
+                    When you hit a ball, it goes up and forward, then gravity pulls it back down. Players choose the
+                    height and speed so the ball lands inside the court and not into the net.
+                </p>
+
+                <h5 class="mb-2 mt-4">6.2 Topspin and slice</h5>
+                <p>
+                    If you brush the ball from low to high, you create <strong>topspin</strong>. The ball rotates forward,
+                    which makes it dip down faster into the court. This lets players hit hard and still keep the ball in.
+                </p>
+                <p>
+                    If you cut the ball from high to low, you create <strong>slice</strong> or backspin. The ball floats
+                    more and often bounces lower and slower. Slice is used to change rhythm and force awkward contact.
+                </p>
+
+                <h5 class="mb-2 mt-4">6.3 Strings and power</h5>
+                <p>
+                    Racket strings act like a mini trampoline. Lower string tension can give more power and comfort, while
+                    higher tension can give more control. For beginners, comfort and control are usually more important than raw power.
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Tennis_ball_on_tennis_court_20170619.jpg"
+                    alt="Tennis ball on a tennis court (Wikimedia Commons)"
+                    class="physics-img mb-2"
+                >
+                <small style="font-size:0.78rem;">
+                    Tennis ball on a court. Photo:
+                    <a href="https://commons.wikimedia.org/wiki/File:Tennis_ball_on_tennis_court_20170619.jpg" target="_blank" rel="noopener">
+                        Wikimedia Commons
+                    </a>.
+                </small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 7. GLOSSARY -->
+<section id="glossary" class="section section-white">
+    <div class="container">
+        <div class="section-header">
+            <h2>7. Glossary – Common Tennis Words</h2>
+            <p>
+                Here are quick meanings of words you will often hear when watching or playing tennis.
+            </p>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-6">
+                <div class="card-soft">
+                    <h6 class="mb-2">Scoring &amp; match terms</h6>
+                    <ul class="clean-list mt-2">
+                        <li><i class="fa-solid fa-circle"></i><strong>Love:</strong>&nbsp;zero points.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Deuce:</strong>&nbsp;40–40, both players have three points in that game.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Advantage:</strong>&nbsp;one player wins a point after deuce and is one point away from winning the game.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Game:</strong>&nbsp;small unit of scoring, made of points.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Set:</strong>&nbsp;collection of games (usually first to 6, by 2).</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Match:</strong>&nbsp;whole contest, best of 3 or 5 sets.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Tie-break:</strong>&nbsp;special game at 6–6 to decide a set.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-soft">
+                    <h6 class="mb-2">Shot &amp; play terms</h6>
+                    <ul class="clean-list mt-2">
+                        <li><i class="fa-solid fa-circle"></i><strong>Rally:</strong>&nbsp;sequence of shots between serve and end of the point.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Ace:</strong>&nbsp;serve that the opponent does not touch.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Volley:</strong>&nbsp;shot hit before the ball bounces, usually near the net.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Drop shot:</strong>&nbsp;very soft shot that lands just over the net.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Baseline:</strong>&nbsp;back line of the court at each end.</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Break of serve:</strong>&nbsp;when the returning player wins the game (takes the other player’s serve).</li>
+                        <li><i class="fa-solid fa-circle"></i><strong>Unforced error:</strong>&nbsp;a mistake made on a relatively easy shot.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 8. FAQ -->
+<section id="faq" class="section section-light">
+    <div class="container">
+        <div class="section-header">
+            <h2>8. Beginner Questions (FAQ)</h2>
+            <p>
+                If you are new to tennis, you might have these questions in mind. Here are short, clear answers.
+            </p>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-6">
+                <div class="card-soft">
+                    <div class="faq-item">
+                        <h6>Do I need to be very fit before I start?</h6>
+                        <p>
+                            No. You can start slowly with short sessions and simple rallies. Tennis itself helps you become
+                            fitter over time. Just listen to your body and take breaks.
+                        </p>
+                    </div>
+                    <div class="faq-item mt-3">
+                        <h6>Is tennis hard to learn?</h6>
+                        <p>
+                            Like any sport, it feels strange at first. But with a basic grip, a few lessons, and practice
+                            hitting gently over the net, most people can rally within a few weeks.
+                        </p>
+                    </div>
+                    <div class="faq-item mt-3">
+                        <h6>Can I play if I only know the very basic rules?</h6>
+                        <p>
+                            Absolutely. At first, just focus on getting the ball over the net and inside the court. You can
+                            learn full scoring gradually while you play.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-soft">
+                    <div class="faq-item">
+                        <h6>Is tennis only for children or professionals?</h6>
+                        <p>
+                            No. Many adults start in their 20s, 30s, 40s or later. Clubs often have beginner groups for all ages.
+                            It is very much a lifelong sport.
+                        </p>
+                    </div>
+                    <div class="faq-item mt-3">
+                        <h6>Do I need a coach?</h6>
+                        <p>
+                            A coach helps you learn faster and avoid bad habits, but you can start by hitting with friends or
+                            against a wall. Even one or two basic lessons can be helpful.
+                        </p>
+                    </div>
+                    <div class="faq-item mt-3">
+                        <h6>Where should I watch tennis to understand more?</h6>
+                        <p>
+                            Watching highlights or full matches from Grand Slams on TV or online is a great way to see how
+                            points, games, and sets work together in real time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 9. GETTING STARTED -->
+<section id="start" class="section section-white">
+    <div class="container">
+        <div class="section-header">
+            <h2>9. Your First Steps to Actually Play</h2>
+            <p>
+                Here is a simple 3-step path from knowing nothing to playing your first friendly match.
+            </p>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-4">
+                <div class="card-soft h-100">
+                    <span class="badge-small mb-3 d-inline-block">Step 1</span>
+                    <h5><i class="fa-solid fa-child-reaching me-1"></i>Try basic hits</h5>
+                    <ul class="clean-list mt-3">
+                        <li><i class="fa-solid fa-circle"></i>Hold the racket with a comfortable, simple grip.</li>
+                        <li><i class="fa-solid fa-circle"></i>Stand a few metres from a friend and gently hit the ball back and forth.</li>
+                        <li><i class="fa-solid fa-circle"></i>Ignore power – aim only for getting the ball over the net.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card-soft h-100">
+                    <span class="badge-small mb-3 d-inline-block">Step 2</span>
+                    <h5><i class="fa-solid fa-school me-1"></i>Join a local group</h5>
+                    <ul class="clean-list mt-3">
+                        <li><i class="fa-solid fa-circle"></i>Find a tennis club, academy, or community courts near you.</li>
+                        <li><i class="fa-solid fa-circle"></i>Take beginner group sessions once or twice a week.</li>
+                        <li><i class="fa-solid fa-circle"></i>Ask the coach or players to explain scoring slowly while you play.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card-soft h-100">
+                    <span class="badge-small mb-3 d-inline-block">Step 3</span>
+                    <h5><i class="fa-solid fa-trophy me-1"></i>Play a short match</h5>
+                    <ul class="clean-list mt-3">
+                        <li><i class="fa-solid fa-circle"></i>Start with a “first to 4 games” match instead of a full set.</li>
+                        <li><i class="fa-solid fa-circle"></i>Serve slowly and safely so rallies can start.</li>
+                        <li><i class="fa-solid fa-circle"></i>Focus on enjoying each rally, not on the final result.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <p class="mt-5 text-center" style="font-size:0.9rem;color:var(--text-muted);">
+            If you follow this page from top to bottom, you now know what the game is, how scoring works,
+            what the courts and shots look like, and how to start playing in real life.
+        </p>
+    </div>
+</section>
+
+<footer>
+    <div class="container text-center">
+        <p class="mb-1">&copy; <span id="year"></span> Lawn Tennis Beginner Page. All rights reserved.</p>
+        <p class="mb-0">
+            Image credits:
+            <a href="https://commons.wikimedia.org/wiki/Tennis" target="_blank" rel="noopener">
+                Wikimedia Commons – Tennis
+            </a>.
+        </p>
+    </div>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Your custom JS -->
+<script src="main.js"></script>
+
+</body>
+</html>
